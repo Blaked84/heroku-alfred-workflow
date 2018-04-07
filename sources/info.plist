@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>connections</key>
+	<dict>
+		<key>93B80FEC-BFF1-41F0-AFB5-474235D95118</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>884C7177-6762-4583-ACA5-A4BD242274CD</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string></string>
+	<key>description</key>
+	<string></string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Heroku</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<true/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>2</integer>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>hk</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Fetching results</string>
+				<key>script</key>
+				<string>#! /urs/bin/ruby
+require 'json'
+a = {"items": [
+    {
+        "uid": "desktop",
+        "type": "file",
+        "title": "Desktop",
+        "subtitle": "~/Desktop",
+        "arg": "~/Desktop",
+        "autocomplete": "Desktop",
+        "icon": {
+            "type": "fileicon",
+            "path": "~/Desktop"
+        }
+    }
+]}
+
+def item(name:)
+  {
+        "uid": name,
+        "type": "file",
+        "title": name,
+        "subtitle": "",
+        "arg": "~/Desktop",
+        "autocomplete": name,
+        "icon": {
+            "type": "fileicon",
+            "path": "~/Desktop"
+        }
+    }
+end
+
+
+
+
+output = %x{/usr/local/bin/heroku apps}
+lines = output.split("\n")
+cleaned_lines = lines.reject{|l| l.match('===')}
+apps = cleaned_lines.map{|l| l.split.first}
+
+json = {"items": apps.map{|app| item(name: app)}}
+
+puts json.to_json
+</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>./heroku.rb</string>
+				<key>subtext</key>
+				<string>Quick acces to console</string>
+				<key>title</key>
+				<string>Heroku</string>
+				<key>type</key>
+				<integer>8</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>93B80FEC-BFF1-41F0-AFB5-474235D95118</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>heroku console  --app {query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.terminalcommand</string>
+			<key>uid</key>
+			<string>884C7177-6762-4583-ACA5-A4BD242274CD</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>884C7177-6762-4583-ACA5-A4BD242274CD</key>
+		<dict>
+			<key>xpos</key>
+			<integer>350</integer>
+			<key>ypos</key>
+			<integer>120</integer>
+		</dict>
+		<key>93B80FEC-BFF1-41F0-AFB5-474235D95118</key>
+		<dict>
+			<key>xpos</key>
+			<integer>50</integer>
+			<key>ypos</key>
+			<integer>120</integer>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>
