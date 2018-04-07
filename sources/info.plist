@@ -6,11 +6,24 @@
 	<string></string>
 	<key>connections</key>
 	<dict>
+		<key>3D1FDA29-5CDF-4D3F-968E-11F95A1D6D74</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>56D07C53-E6AD-40DC-9D96-1B2331DE294B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>93B80FEC-BFF1-41F0-AFB5-474235D95118</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>884C7177-6762-4583-ACA5-A4BD242274CD</string>
+				<string>3D1FDA29-5CDF-4D3F-968E-11F95A1D6D74</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -30,6 +43,21 @@
 	<string>Heroku</string>
 	<key>objects</key>
 	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.terminalcommand</string>
+			<key>uid</key>
+			<string>56D07C53-E6AD-40DC-9D96-1B2331DE294B</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -123,27 +151,64 @@ puts json.to_json
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>2</integer>
 				<key>escaping</key>
 				<integer>0</integer>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
 				<key>script</key>
-				<string>heroku console  --app {query}</string>
+				<string></string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>./heroku-actions.rb</string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string></string>
+				<key>type</key>
+				<integer>8</integer>
+				<key>withspace</key>
+				<false/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.terminalcommand</string>
+			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
-			<string>884C7177-6762-4583-ACA5-A4BD242274CD</string>
+			<string>3D1FDA29-5CDF-4D3F-968E-11F95A1D6D74</string>
 			<key>version</key>
-			<integer>1</integer>
+			<integer>2</integer>
 		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
 	<key>uidata</key>
 	<dict>
-		<key>884C7177-6762-4583-ACA5-A4BD242274CD</key>
+		<key>3D1FDA29-5CDF-4D3F-968E-11F95A1D6D74</key>
 		<dict>
 			<key>xpos</key>
-			<integer>350</integer>
+			<integer>240</integer>
+			<key>ypos</key>
+			<integer>120</integer>
+		</dict>
+		<key>56D07C53-E6AD-40DC-9D96-1B2331DE294B</key>
+		<dict>
+			<key>xpos</key>
+			<integer>460</integer>
 			<key>ypos</key>
 			<integer>120</integer>
 		</dict>
