@@ -9,7 +9,6 @@ cleaned_lines = lines.reject{|l| l.match('===')}
 apps = cleaned_lines.map{|l| l.split.first}   
 
 cleaned_lines.each do|l|
-     l.split.first
      workflow.result
         .uid(l.split.first)
         .title(l.split.first)
@@ -18,7 +17,5 @@ cleaned_lines.each do|l|
         .autocomplete(l.split.first)
 
 end        
-
-
 
 print workflow.output

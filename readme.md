@@ -4,8 +4,10 @@ This workflow for [Alfred](https://www.alfredapp.com/) help you to quickly open 
 
 ## Current status
 - [x] Open console
-- [ ] Open logs
-- [ ] Open dashboard
+- [x] Open logs
+- [x] Open dashboard
+- [x] Open app
+- [ ] One click or one line install
 
 ## Installation
 1. Install and configure [heroku cli](https://devcenter.heroku.com/articles/heroku-cli) for your heroku account
