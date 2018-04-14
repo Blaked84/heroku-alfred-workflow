@@ -8,9 +8,9 @@ class App
 
   def action_menu(workflow)
     workflow.result
-      .uid('console')
-      .title('Console')
-      .arg("heroku console  --app #{@name}")
+      .uid('bash')
+      .title('Bash')
+      .arg("heroku run bash  --app #{@name}")
    
     workflow.result
       .uid('logs')
@@ -26,5 +26,10 @@ class App
       .uid('app')
       .title('Open app')
       .arg("open http://#{@name}.herokuapp.com")
+
+    workflow.result
+      .uid('rails console')
+      .title('Rails Console')
+      .arg("heroku run rails console  --app #{@name}")  
   end            
 end
