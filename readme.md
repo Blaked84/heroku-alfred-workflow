@@ -19,3 +19,6 @@ This workflow for [Alfred](https://www.alfredapp.com/) help you to quickly open 
 - [x] Open app
 - [x] One click or one line install
 - [x] Caching
+
+## Credit
+Include [alfred-workflow-ruby](https://github.com/joetannenbaum/alfred-workflow-ruby)

@@ -1,5 +1,5 @@
 #! /usr/bin/ruby
-require 'alfred-3_workflow'
+require './lib/alfred-3_workflow.rb'
 require 'yaml'
 require './app.rb'
 
@@ -10,7 +10,7 @@ RELOAD_ARG = '--reload-apps'
 def update_apps_list
   output = %x{/usr/local/bin/heroku apps}
   lines = output.split("\n")
-  cleaned_lines = lines.reject{|l| l.match('===')}
+  cleaned_lines = lines.reject{|l| l.match('===')}  
   apps = cleaned_lines.map{|l| {name: l.split.first, info: l.split.last}}
 
   File.open(APPS_LIST_FILE, 'w') { |f| f.write(apps.to_yaml) }
