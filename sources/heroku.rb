@@ -1,5 +1,5 @@
 #! /usr/bin/ruby
-require './lib/alfred-3_workflow.rb'
+require_relative './lib/alfred-3_workflow.rb'
 require 'yaml'
 require './app.rb'
 
