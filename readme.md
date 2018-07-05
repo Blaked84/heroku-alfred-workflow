@@ -1,6 +1,6 @@
 # Heroku Alfred Workflow
 
-This workflow for [Alfred](https://www.alfredapp.com/) help you to quickly open Heroku logs, console, or dashboard.
+This workflow for [Alfred](https://www.alfredapp.com/) helps you to quickly open Heroku logs, console, or dashboard.
 
 ![demo](https://github.com/Blaked84/heroku-alfred-workflow/blob/master/demo.gif?raw=true)
 
