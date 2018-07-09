@@ -30,6 +30,11 @@ class App
     workflow.result
       .uid('rails console')
       .title('Rails Console')
-      .arg("heroku run rails console  --app #{@name}")  
+      .arg("heroku run rails console  --app #{@name}") 
+
+    workflow.result
+      .uid('pg info')
+      .title('Postgres info')
+      .arg("heroku pg:info  --app #{@name}")      
   end            
 end
