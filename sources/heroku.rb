@@ -8,7 +8,7 @@ RELOAD_ARG = '--reload-apps'
 @workflow = Alfred3::Workflow.new
 
 def update_apps_list
-  output = %x{/usr/local/bin/heroku apps}
+  output = %x{/usr/local/bin/heroku apps --all}
   lines = output.split("\n")
   cleaned_lines = lines.reject{|l| l.match('===')}  
   apps = cleaned_lines.map{|l| {name: l.split.first, info: l.split.last}}
