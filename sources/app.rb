@@ -10,7 +10,7 @@ class App
     workflow.result
       .uid('bash')
       .title('Bash')
-      .arg("heroku run bash  --app #{@name}")
+      .arg("heroku run bash --app #{@name}")
    
     workflow.result
       .uid('logs')
@@ -30,11 +30,16 @@ class App
     workflow.result
       .uid('rails console')
       .title('Rails Console')
-      .arg("heroku run rails console  --app #{@name}") 
+      .arg("heroku run rails console --app #{@name}") 
 
     workflow.result
       .uid('pg info')
       .title('Postgres info')
-      .arg("heroku pg:info  --app #{@name}")      
+      .arg("heroku pg:info --app #{@name}")
+    
+    workflow.result
+      .uid('config')
+      .title('See and edit env variables')
+      .arg("heroku config:edit --app #{@name}")
   end            
 end
