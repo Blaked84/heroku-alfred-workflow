@@ -25,7 +25,7 @@ class App
     workflow.result
       .uid('app')
       .title('Open app')
-      .arg("open http://#{@name}.herokuapp.com")
+      .arg("heroku apps:open --app #{@name}")
 
     workflow.result
       .uid('rails console')
